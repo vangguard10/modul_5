@@ -10,18 +10,22 @@ print('''calculating zoo ticket program
 x=1
 total=0
 banyak_data=0
-print('input -1 on age to see the result')
+print('press <ENTER> on age to see the result')
 while x == 1:
-    umur=int(input('age:'))
-    uang=int(input('money:'))
-    if umur <= 2 and umur >= 0:
+    umur=(input('age:'))
+    if umur=='':
+        x=-1
+        print('====================')
+    elif int(umur) <= 2 and int(umur) >= 0:
+        uang=int(input('money:'))
         banyak_data+=1
         kembali= uang-0
         x=1
         print('price :free')
         print(f'return: {kembali} dollar')
         print('====================')
-    elif (umur>=3) and (umur<=12):
+    elif (int(umur)>=3) and (int(umur)<=12):
+        uang=int(input('money:'))
         kembali= uang-14
         if kembali>0:
             banyak_data+=1
@@ -35,7 +39,8 @@ while x == 1:
         print('====================')
        
         x=1
-    elif (umur>12) and (umur<65):
+    elif (int(umur)>12) and int(umur)<65:
+        uang=int(input('money:'))
         kembali= uang-23
         if kembali>0:
             banyak_data+=1
@@ -49,7 +54,8 @@ while x == 1:
 ====================''')
        
         x=1
-    elif umur >=65:
+    elif int(umur)>=65:
+        uang=int(input('money:'))
         kembali= uang-18
         if kembali>0:
             banyak_data+=1
@@ -63,9 +69,6 @@ while x == 1:
         print('====================')
        
         x=1
-    elif umur <0:
-        x=-1
-        print('====================')
         
 
 print(f'total income: {total} dollar')
